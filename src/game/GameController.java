@@ -202,7 +202,7 @@ public class GameController implements ActionListener {
         setTitle();
         addPanel(view.getSplashScreen());
         System.out.println("Adding Splash ... " + addPanel(view.getSplashScreen()));
-        model.programSleep(500);
+        model.programSleep(3000);
         System.out.println("Disposing Splash ... " + disposePanel(view.getSplashScreen()));
         playGame();
         return true;
@@ -429,6 +429,10 @@ public class GameController implements ActionListener {
                         }
                     }
                 }
+                break;
+            case "BUTABOUT":
+                model.eventLog(getTextArea(), getLabel("ABOUT1") + "\n");
+                model.eventLog(getTextArea(), getLabel("ABOUT2") + "\n");
                 break;
 
             default: // Jbuttons in Game mode
